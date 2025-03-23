@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryptor App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Encrypt & Decrypt Data</h1>
+        
+        <label for="data">Enter Text:</label>
+        <textarea id="data" rows="4"></textarea>
+
+        <label for="method">Select Method:</label>
+        <select id="method">
+            <option value="aes">AES Encryption</option>
+            <option value="base64">Base64 Encoding</option>
+        </select>
+
+        <button onclick="encryptData()">Encrypt</button>
+        <button onclick="decryptData()">Decrypt</button>
+
+        <h3>Result:</h3>
+        <textarea id="result" rows="4" readonly></textarea>
+        <button onclick="copyText()">Copy</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
